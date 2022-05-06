@@ -15,18 +15,18 @@ if memo_type == "1"
 
 elsif memo_type == "2"
   puts "【現在のディレクトリにある編集可能なファイルは以下のとおりです。】"
-  puts "----------------------"
+  puts "-------------------------"
   Dir.glob('*.csv').sort.each {|d| puts d.gsub(/.csv/,'')}
-  puts "----------------------"
+  puts "-------------------------"
 
   puts "【編集したいファイル名を入力してください。】"
   file_name_edit = gets.to_s.chomp
 
   puts "【入力されたファイルの内容は以下のとおりです】"
   edit_file_content = CSV.read(file_name_edit + ".csv")
-  puts "----------------------"
+  puts "-------------------------"
   puts edit_file_content
-  puts "----------------------"
+  puts "-------------------------"
 
   puts "【1(上書きして編集) 2(メモを末尾に追記)】"
   edit_type = gets.to_s.chomp
@@ -50,5 +50,5 @@ elsif memo_type == "2"
 
 else
   puts "【入力が不正です。】"
-  
+
 end
